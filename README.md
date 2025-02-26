@@ -2,6 +2,10 @@
 marzneshin
 دستورات و راهنماهای مربوط به مرزنشین
 ---------------------------------------------
+نصب مرزنشین  
+```bash
+sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/master/script.sh)" @ install
+
 Marznode Setup Script
 
 برای نصب و راه‌اندازی --> مرزنود <-- دستور زیر رو توی ترمینال اجرا کنید:
