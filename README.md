@@ -6,7 +6,7 @@ marzneshin
 ```bash
 sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/master/script.sh)" @ install
 
-Marznode Setup Script
+#Marznode Setup Script
 
 برای نصب و راه‌اندازی --> مرزنود <-- دستور زیر رو توی ترمینال اجرا کنید:#
 ```bash
