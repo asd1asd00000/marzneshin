@@ -1,6 +1,6 @@
 <div>
 <strong>نصب پنل مرزنشین:</strong>
-<pre><code>sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/master/script.sh)" @ install"</code></pre>
+<pre><code>sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/master/script.sh)" @ install</code></pre>
 </div>
 
 <div>
