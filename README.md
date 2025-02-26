@@ -14,8 +14,8 @@
 </div>
 
 <div>
-<strong>000000000000:</strong>
-<pre><code>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</code></pre>
+<strong>نصب ssl مرزنشین:</strong>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/nasbe-ssl-marzneshin.sh)"</code></pre>
 </div>
 
 <div>
