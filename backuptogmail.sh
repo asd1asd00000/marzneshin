@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Grant execute permission to this script (optional, only needed if copied to a new system without execute permission)
-chmod +x "$0"  # $0 refers to the current script (setup_backup.sh)
+# chmod +x "$0"  # $0 refers to the current script (setup_backup.sh)
 
 # Define color codes
 YELLOW='\033[33m'
