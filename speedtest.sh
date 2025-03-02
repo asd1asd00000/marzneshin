@@ -1,21 +1,27 @@
 #!/bin/bash
 
-# Step 1: Update packages and install curl
-echo "Updating packages and installing curl..."
-sudo apt-get update -y && sudo apt-get install curl -y
+# Check if curl is installed, if not install it
+if ! command -v curl > /dev/null 2>&1; then
+    echo "curl is not installed. Updating packages and installing curl..."
+    sudo apt-get update -y && sudo apt-get install curl -y
+else
+    echo "curl is already installed."
+fi
 
-# Step 2: Add speedtest-cli repository from packagecloud
-echo "Adding speedtest-cli repository..."
-curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-
-# Step 3: Install speedtest
-echo "Installing speedtest..."
-sudo apt-get install speedtest -y
+# Check if speedtest is installed, if not set up repository and install
+if ! command -v speedtest > /dev/null 2>&1; then
+    echo "speedtest is not installed. Adding speedtest-cli repository..."
+    curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+    echo "Installing speedtest..."
+    sudo apt-get install speedtest -y
+else
+    echo "speedtest is already installed."
+fi
 
 # Infinite loop to keep the script running
 while true; do
-    # Step 4: Display server selection menu
-    echo "Installation completed successfully. Please select a server for speed testing:"
+    # Display server selection menu
+    echo "Please select a server for speed testing:"
     echo "1) Irancell (Server ID: 4317)"
     echo "2) MCI (Hamrahe Aval) (Server ID: 18512)"
     echo "3) Pishgaman (Server ID: 32500)"
