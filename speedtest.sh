@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# ANSI color codes
+YELLOW_BG='\033[43m'  # Yellow background
+BLACK_TEXT='\033[30m' # Black text
+BLINK='\033[5m'       # Blink effect
+RESET='\033[0m'       # Reset to default
+
 # Check if curl is installed, if not install it
 if ! command -v curl > /dev/null 2>&1; then
     echo "curl is not installed. Updating packages and installing curl..."
@@ -20,22 +26,23 @@ fi
 
 # Infinite loop to keep the script running
 while true; do
-    # Display server selection menu
+    # Display server selection menu with colored boxed numbers
     echo "Please select a server for speed testing:"
-    echo "1) Irancell (Server ID: 4317)"
-    echo "2) MCI (Hamrahe Aval) (Server ID: 18512)"
-    echo "3) Pishgaman (Server ID: 32500)"
-    echo "4) Hiweb (Server ID: 6794)"
-    echo "5) MabnaTelecom (Server ID: 21031)"
-    echo "6) HostIran.net (Server ID: 43844)"
-    echo "7) ATRINNET-SERVCO (Server ID: 22097)"
-    echo "8) SYSTEC (Server ID: 57696)"
-    echo "9) Sindad (Server ID: 37820)"
-    echo "10) PentaHost (Server ID: 68756)"
-    echo "11) Exit"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ${RESET}) Irancell (Server ID: 4317)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 2 ${RESET}) MCI (Hamrahe Aval) (Server ID: 18512)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 3 ${RESET}) Pishgaman (Server ID: 32500)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 4 ${RESET}) Hiweb (Server ID: 6794)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 5 ${RESET}) MabnaTelecom (Server ID: 21031)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 6 ${RESET}) HostIran.net (Server ID: 43844)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 7 ${RESET}) ATRINNET-SERVCO (Server ID: 22097)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 8 ${RESET}) SYSTEC (Server ID: 57696)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 9 ${RESET}) Sindad (Server ID: 37820)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 10 ${RESET}) PentaHost (Server ID: 68756)"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 11 ${RESET}) Exit"
 
-    # Get user input
-    read -p "Enter the number of your choice (1-11): " choice
+    # Get user input with blinking (1-11)
+    echo -ne "Enter the number of your choice ${BLINK}(1-11)${RESET}: "
+    read choice
 
     # Check user choice and execute corresponding command
     case $choice in
