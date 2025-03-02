@@ -2,6 +2,7 @@
 
 # ANSI color codes
 YELLOW_BG='\033[43m'  # Yellow background
+BLUE_BG='\033[44m'    # Blue background
 BLACK_TEXT='\033[30m' # Black text
 BLINK='\033[5m'       # Blink effect
 RESET='\033[0m'       # Reset to default
@@ -26,18 +27,18 @@ fi
 
 # Infinite loop to keep the script running
 while true; do
-    # Display server selection menu with colored boxed numbers
+    # Display server selection menu with alternating yellow and blue boxed numbers
     echo "Please select a server for speed testing:"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ${RESET}) Irancell (Server ID: 4317)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 2 ${RESET}) MCI (Hamrahe Aval) (Server ID: 18512)"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 2 ${RESET}) MCI (Hamrahe Aval) (Server ID: 18512)"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 3 ${RESET}) Pishgaman (Server ID: 32500)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 4 ${RESET}) Hiweb (Server ID: 6794)"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 4 ${RESET}) Hiweb (Server ID: 6794)"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 5 ${RESET}) MabnaTelecom (Server ID: 21031)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 6 ${RESET}) HostIran.net (Server ID: 43844)"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 6 ${RESET}) HostIran.net (Server ID: 43844)"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 7 ${RESET}) ATRINNET-SERVCO (Server ID: 22097)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 8 ${RESET}) SYSTEC (Server ID: 57696)"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 8 ${RESET}) SYSTEC (Server ID: 57696)"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 9 ${RESET}) Sindad (Server ID: 37820)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 10 ${RESET}) PentaHost (Server ID: 68756)"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 10 ${RESET}) PentaHost (Server ID: 68756)"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 11 ${RESET}) Exit"
 
     # Get user input with blinking (1-11)
