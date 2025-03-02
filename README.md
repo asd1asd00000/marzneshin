@@ -23,8 +23,8 @@
 <pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/backuptogmail.sh)"</code></pre>
 </div>
 <div>
-<strong>000000000000:</strong>
-<pre><code>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</code></pre>
+<strong>speedtest:</strong>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/speedtest.sh)"</code></pre>
 </div>
 
 <div>
