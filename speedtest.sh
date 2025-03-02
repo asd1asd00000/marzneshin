@@ -27,19 +27,19 @@ fi
 
 # Infinite loop to keep the script running
 while true; do
-    # Display server selection menu with alternating yellow and blue boxed numbers
+    # Display server selection menu with alternating full-line yellow and blue backgrounds
     echo "Please select a server for speed testing:"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ${RESET}) Irancell (Server ID: 4317)"
-    echo -e "${BLUE_BG}${BLACK_TEXT} 2 ${RESET}) MCI (Hamrahe Aval) (Server ID: 18512)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 3 ${RESET}) Pishgaman (Server ID: 32500)"
-    echo -e "${BLUE_BG}${BLACK_TEXT} 4 ${RESET}) Hiweb (Server ID: 6794)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 5 ${RESET}) MabnaTelecom (Server ID: 21031)"
-    echo -e "${BLUE_BG}${BLACK_TEXT} 6 ${RESET}) HostIran.net (Server ID: 43844)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 7 ${RESET}) ATRINNET-SERVCO (Server ID: 22097)"
-    echo -e "${BLUE_BG}${BLACK_TEXT} 8 ${RESET}) SYSTEC (Server ID: 57696)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 9 ${RESET}) Sindad (Server ID: 37820)"
-    echo -e "${BLUE_BG}${BLACK_TEXT} 10 ${RESET}) PentaHost (Server ID: 68756)"
-    echo -e "${YELLOW_BG}${BLACK_TEXT} 11 ${RESET}) Exit"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ) Irancell (Server ID: 4317)${RESET}"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 2 ) MCI (Hamrahe Aval) (Server ID: 18512)${RESET}"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 3 ) Pishgaman (Server ID: 32500)${RESET}"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 4 ) Hiweb (Server ID: 6794)${RESET}"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 5 ) MabnaTelecom (Server ID: 21031)${RESET}"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 6 ) HostIran.net (Server ID: 43844)${RESET}"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 7 ) ATRINNET-SERVCO (Server ID: 22097)${RESET}"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 8 ) SYSTEC (Server ID: 57696)${RESET}"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 9 ) Sindad (Server ID: 37820)${RESET}"
+    echo -e "${BLUE_BG}${BLACK_TEXT} 10 ) PentaHost (Server ID: 68756)${RESET}"
+    echo -e "${YELLOW_BG}${BLACK_TEXT} 11 ) Exit${RESET}"
 
     # Get user input with blinking (1-11)
     echo -ne "Enter the number of your choice ${BLINK}(1-11)${RESET}: "
