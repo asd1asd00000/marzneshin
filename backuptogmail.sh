@@ -11,7 +11,7 @@ NC='\033[0m' # No Color
 install_requirements() {
     echo "Checking and installing required packages..."
     sudo apt update > /dev/null 2>&1
-    for package in p7zip-full ssmtp mutt cron nano; do
+    for package in p7zip-full ssmtp mutt cron gpgsm nano; do
         if ! command -v ${package%-*} >/dev/null 2>&1; then
             echo "Installing $package..."
             sudo apt install -y "$package" > /dev/null 2>&1
