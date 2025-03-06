@@ -9,7 +9,7 @@ NC='\033[0m'       # No Color
 # Update package list and install required packages
 echo "Installing required packages..."
 sudo apt update
-sudo apt install -y zip msmtp cron mutt gnupg ca-certificates
+sudo apt install -y zip msmtp cron mutt ca-certificates
 
 # Enable cron service
 sudo systemctl enable cron
@@ -80,15 +80,6 @@ if [ -z "$email_password" ]; then
     exit 1
 fi
 
-# Get GPG passphrase for additional encryption
-echo -e -n "${BLUE}${WHITE}Enter passphrase for GPG encryption${BLINK}:${NC} "
-read -s gpg_passphrase
-echo ""
-if [ -z "$gpg_passphrase" ]; then
-    echo "Error: GPG passphrase cannot be empty!"
-    exit 1
-fi
-
 # Create msmtp configuration file
 MSMTP_CONFIG="$HOME/.msmtprc"
 cat > "$MSMTP_CONFIG" << EOL
@@ -155,34 +146,26 @@ cat > "$BACKUP_SCRIPT" << EOL
 
 TIMESTAMP=\$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="/tmp/${backup_name}_\$TIMESTAMP.zip"
-ENCRYPTED_FILE="/tmp/${backup_name}_\$TIMESTAMP.zip.gpg"
 LOG_FILE="/tmp/backup_log_\$TIMESTAMP.txt"
 
 # Create zip file with password
 zip -r -P "$zip_password" "\$BACKUP_FILE" $folders > "\$LOG_FILE" 2>&1
 
 if [ \$? -eq 0 ]; then
-    # Encrypt the zip file with GPG
-    echo "$gpg_passphrase" | gpg --batch --yes --passphrase-fd 0 -c "\$BACKUP_FILE" >> "\$LOG_FILE" 2>&1
+    # Send backup via email
+    echo "Backup created successfully on \$TIMESTAMP" | mutt -s "${backup_name} \$TIMESTAMP" -a "\$BACKUP_FILE" -- "$email" >> "\$LOG_FILE" 2>&1
     
     if [ \$? -eq 0 ]; then
-        # Send encrypted backup via email
-        echo "Backup created and encrypted successfully on \$TIMESTAMP" | mutt -s "${backup_name} \$TIMESTAMP" -a "\$ENCRYPTED_FILE" -- "$email" >> "\$LOG_FILE" 2>&1
-        
-        if [ \$? -eq 0 ]; then
-            echo "Encrypted backup sent successfully to $email" >> "\$LOG_FILE"
-        else
-            echo "Failed to send encrypted backup to $email" >> "\$LOG_FILE"
-        fi
+        echo "Backup sent successfully to $email" >> "\$LOG_FILE"
     else
-        echo "Failed to encrypt backup!" >> "\$LOG_FILE"
+        echo "Failed to send backup to $email" >> "\$LOG_FILE"
     fi
 else
     echo "Failed to create backup!" >> "\$LOG_FILE"
 fi
 
 # Cleanup
-rm -f "\$BACKUP_FILE" "\$ENCRYPTED_FILE"
+rm -f "\$BACKUP_FILE"
 EOL
 
 chmod +x "$BACKUP_SCRIPT"
@@ -194,10 +177,10 @@ chmod +x "$BACKUP_SCRIPT"
 if [ $? -eq 0 ]; then
     echo "Backup system setup successfully!"
     echo "Backups will run every $minutes minutes"
-    echo "Files will be named: ${backup_name}_[TIMESTAMP].zip.gpg"
+    echo "Files will be named: ${backup_name}_[TIMESTAMP].zip"
     echo "Email subject: ${backup_name} [TIMESTAMP]"
     echo "Sent to: $email"
-    echo "Files are encrypted with both ZIP password and GPG passphrase"
+    echo "Files are encrypted with ZIP password"
 else
     echo "Failed to setup backup system!"
     exit 1
