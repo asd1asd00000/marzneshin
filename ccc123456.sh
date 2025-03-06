@@ -23,7 +23,8 @@ clear
 echo -e "${GREEN}${WHITE}Please select folder backup option${NC}"
 echo -e "${BLUE}${WHITE}1. Enter custom folders (separated by spaces)${NC}"
 echo -e "${BLUE}${WHITE}2. marzneshin${NC}"
-echo -e -n "${GREEN}${WHITE}Enter your choice (1 or 2)${BLINK}:${NC} "
+echo -e "${BLUE}${WHITE}3. x-ui${NC}"
+echo -e -n "${GREEN}${WHITE}Enter your choice (1, 2, or 3)${BLINK}:${NC} "
 read -r choice
 
 case $choice in
@@ -51,6 +52,14 @@ case $choice in
                 echo "Warning: Folder '$folder' does not exist but will be included if created later"
             fi
         done
+        ;;
+    3)
+        folders="/etc/x-ui/"
+        echo "Selected predefined x-ui folder: $folders"
+        # Verify predefined folder exists
+        if [ ! -d "$folders" ]; then
+            echo "Warning: Folder '$folders' does not exist but will be included if created later"
+        fi
         ;;
     *)
         echo "Error: Invalid choice!"
