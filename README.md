@@ -20,7 +20,8 @@
 
 <div>
 <strong>ارسال بکاپ به جیمیل:</strong>
-<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/backuptogmail.sh)"</code></pre>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/backup.to.gmail.sh)"
+</code></pre>
 </div>
 <div>
 <strong>speedtest:</strong>
