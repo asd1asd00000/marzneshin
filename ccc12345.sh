@@ -58,9 +58,9 @@ case $choice in
         ;;
 esac
 
-# Get password for zip file
+# Get password for zip file (visible)
 echo -e -n "${GREEN}${WHITE}Enter password for zip file${BLINK}:${NC} "
-read -s zip_password
+read -r zip_password
 echo ""
 if [ -z "$zip_password" ]; then
     echo "Error: Password cannot be empty!"
