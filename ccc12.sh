@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Colors for prompts
-BLUE='\033[0;44m'  # Blue background
-WHITE='\033[1;37m' # White text
-BLINK='\033[5m'    # Blinking effect
-NC='\033[0m'       # No Color
+BROWN='\033[0;43m'  # Light brown (yellow background)
+WHITE='\033[1;37m'  # White text
+BLINK='\033[5m'     # Blinking effect
+NC='\033[0m'        # No Color
 
 # Update package list and install required packages
 echo "Installing required packages..."
@@ -15,16 +15,16 @@ sudo apt install -y zip msmtp cron mutt ca-certificates
 sudo systemctl enable cron
 sudo systemctl start cron
 
-# Get folder selection from user with blue background and blinking colon
-echo -e "${BLUE}${WHITE}Please select folder backup option${NC}"
-echo -e "${BLUE}${WHITE}1. Enter custom folders (separated by spaces)${NC}"
-echo -e "${BLUE}${WHITE}2. Use 'marzneshin' for predefined folders${NC}"
-echo -e -n "${BLUE}${WHITE}Enter your choice (1 or 2)${BLINK}:${NC} "
+# Get folder selection from user with brown background and blinking colon
+echo -e "${BROWN}${WHITE}Please select folder backup option${NC}"
+echo -e "${BROWN}${WHITE}1. Enter custom folders (separated by spaces)${NC}"
+echo -e "${BROWN}${WHITE}2. marzneshin${NC}"
+echo -e -n "${BROWN}${WHITE}Enter your choice (1 or 2)${BLINK}:${NC} "
 read -r choice
 
 case $choice in
     1)
-        echo -e -n "${BLUE}${WHITE}Enter folders to backup (separate with spaces)${BLINK}:${NC} "
+        echo -e -n "${BROWN}${WHITE}Enter folders to backup (separate with spaces)${BLINK}:${NC} "
         read -r folders
         if [ -z "$folders" ]; then
             echo "Error: No folders specified!"
@@ -55,7 +55,7 @@ case $choice in
 esac
 
 # Get password for zip file
-echo -e -n "${BLUE}${WHITE}Enter password for zip file${BLINK}:${NC} "
+echo -e -n "${BROWN}${WHITE}Enter password for zip file${BLINK}:${NC} "
 read -s zip_password
 echo ""
 if [ -z "$zip_password" ]; then
@@ -64,7 +64,7 @@ if [ -z "$zip_password" ]; then
 fi
 
 # Get email address
-echo -e -n "${BLUE}${WHITE}Enter your Gmail address${BLINK}:${NC} "
+echo -e -n "${BROWN}${WHITE}Enter your Gmail address${BLINK}:${NC} "
 read -r email
 if [ -z "$email" ]; then
     echo "Error: Email cannot be empty!"
@@ -72,7 +72,7 @@ if [ -z "$email" ]; then
 fi
 
 # Get email password
-echo -e -n "${BLUE}${WHITE}Enter your Gmail password (App Password if 2FA enabled)${BLINK}:${NC} "
+echo -e -n "${BROWN}${WHITE}Enter your Gmail password (App Password if 2FA enabled)${BLINK}:${NC} "
 read -s email_password
 echo ""
 if [ -z "$email_password" ]; then
@@ -123,19 +123,42 @@ else
     exit 1
 fi
 
-# Get cron interval
-echo -e -n "${BLUE}${WHITE}How often to run backup (in minutes)${BLINK}:${NC} "
-read -r minutes
-if ! [[ "$minutes" =~ ^[0-9]+$ ]] || [ "$minutes" -lt 1 ]; then
-    echo "Error: Please enter a valid number of minutes!"
-    exit 1
-fi
-
 # Get backup filename and email subject
-echo -e -n "${BLUE}${WHITE}Enter backup filename (without extension) and email subject${BLINK}:${NC} "
+echo -e -n "${BROWN}${WHITE}Enter backup filename (without extension) and email subject${BLINK}:${NC} "
 read -r backup_name
 if [ -z "$backup_name" ]; then
     echo "Error: Backup name cannot be empty!"
+    exit 1
+fi
+
+# Perform initial backup and send it
+echo "Creating and sending initial backup..."
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+INITIAL_BACKUP_FILE="/tmp/${backup_name}_${TIMESTAMP}.zip"
+zip -r -P "$zip_password" "$INITIAL_BACKUP_FILE" $folders >/tmp/initial_backup_log 2>&1
+if [ $? -eq 0 ]; then
+    echo "Initial backup created successfully on $TIMESTAMP" | mutt -s "${backup_name} $TIMESTAMP" -a "$INITIAL_BACKUP_FILE" -- "$email" >>/tmp/initial_backup_log 2>&1
+    if [ $? -eq 0 ]; then
+        echo "Initial backup sent successfully to $email"
+    else
+        echo "Failed to send initial backup! Check /tmp/initial_backup_log for details."
+        cat /tmp/initial_backup_log
+        rm -f /tmp/initial_backup_log
+        exit 1
+    fi
+else
+    echo "Failed to create initial backup! Check /tmp/initial_backup_log for details."
+    cat /tmp/initial_backup_log
+    rm -f /tmp/initial_backup_log
+    exit 1
+fi
+rm -f "$INITIAL_BACKUP_FILE" /tmp/initial_backup_log
+
+# Get cron interval
+echo -e -n "${BROWN}${WHITE}How often to run backup (in minutes)${BLINK}:${NC} "
+read -r minutes
+if ! [[ "$minutes" =~ ^[0-9]+$ ]] || [ "$minutes" -lt 1 ]; then
+    echo "Error: Please enter a valid number of minutes!"
     exit 1
 fi
 
@@ -176,7 +199,8 @@ chmod +x "$BACKUP_SCRIPT"
 # Final message
 if [ $? -eq 0 ]; then
     echo "Backup system setup successfully!"
-    echo "Backups will run every $minutes minutes"
+    echo "Initial backup has been sent."
+    echo "Future backups will run every $minutes minutes"
     echo "Files will be named: ${backup_name}_[TIMESTAMP].zip"
     echo "Email subject: ${backup_name} [TIMESTAMP]"
     echo "Sent to: $email"
