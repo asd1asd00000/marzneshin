@@ -1,10 +1,24 @@
 #!/bin/bash
 
 # Colors for prompts
-BROWN='\033[0;43m'  # Light brown (yellow background)
+BLUE='\033[0;44m'   # Blue background
+GREEN='\033[0;42m'  # Green background
 WHITE='\033[1;37m'  # White text
 BLINK='\033[5m'     # Blinking effect
 NC='\033[0m'        # No Color
+
+# Counter to alternate colors
+COUNTER=0
+
+# Function to get alternating background color
+get_bg_color() {
+    if [ $((COUNTER % 2)) -eq 0 ]; then
+        echo "$BLUE"
+    else
+        echo "$GREEN"
+    fi
+    ((COUNTER++))
+}
 
 # Update package list and install required packages
 echo "Installing required packages..."
@@ -15,16 +29,18 @@ sudo apt install -y zip msmtp cron mutt ca-certificates
 sudo systemctl enable cron
 sudo systemctl start cron
 
-# Get folder selection from user with brown background and blinking colon
-echo -e "${BROWN}${WHITE}Please select folder backup option${NC}"
-echo -e "${BROWN}${WHITE}1. Enter custom folders (separated by spaces)${NC}"
-echo -e "${BROWN}${WHITE}2. marzneshin${NC}"
-echo -e -n "${BROWN}${WHITE}Enter your choice (1 or 2)${BLINK}:${NC} "
+# Get folder selection from user with alternating background and blinking colon
+BG_COLOR=$(get_bg_color)
+echo -e "${BG_COLOR}${WHITE}Please select folder backup option${NC}"
+echo -e "${BG_COLOR}${WHITE}1. Enter custom folders (separated by spaces)${NC}"
+echo -e "${BG_COLOR}${WHITE}2. marzneshin${NC}"
+echo -e -n "${BG_COLOR}${WHITE}Enter your choice (1 or 2)${BLINK}:${NC} "
 read -r choice
 
 case $choice in
     1)
-        echo -e -n "${BROWN}${WHITE}Enter folders to backup (separate with spaces)${BLINK}:${NC} "
+        BG_COLOR=$(get_bg_color)
+        echo -e -n "${BG_COLOR}${WHITE}Enter folders to backup (separate with spaces)${BLINK}:${NC} "
         read -r folders
         if [ -z "$folders" ]; then
             echo "Error: No folders specified!"
@@ -55,7 +71,8 @@ case $choice in
 esac
 
 # Get password for zip file
-echo -e -n "${BROWN}${WHITE}Enter password for zip file${BLINK}:${NC} "
+BG_COLOR=$(get_bg_color)
+echo -e -n "${BG_COLOR}${WHITE}Enter password for zip file${BLINK}:${NC} "
 read -s zip_password
 echo ""
 if [ -z "$zip_password" ]; then
@@ -64,7 +81,8 @@ if [ -z "$zip_password" ]; then
 fi
 
 # Get email address
-echo -e -n "${BROWN}${WHITE}Enter your Gmail address${BLINK}:${NC} "
+BG_COLOR=$(get_bg_color)
+echo -e -n "${BG_COLOR}${WHITE}Enter your Gmail address${BLINK}:${NC} "
 read -r email
 if [ -z "$email" ]; then
     echo "Error: Email cannot be empty!"
@@ -72,7 +90,8 @@ if [ -z "$email" ]; then
 fi
 
 # Get email password
-echo -e -n "${BROWN}${WHITE}Enter your Gmail password (App Password if 2FA enabled)${BLINK}:${NC} "
+BG_COLOR=$(get_bg_color)
+echo -e -n "${BG_COLOR}${WHITE}Enter your Gmail password (App Password if 2FA enabled)${BLINK}:${NC} "
 read -s email_password
 echo ""
 if [ -z "$email_password" ]; then
@@ -124,7 +143,8 @@ else
 fi
 
 # Get backup filename and email subject
-echo -e -n "${BROWN}${WHITE}Enter backup filename (without extension) and email subject${BLINK}:${NC} "
+BG_COLOR=$(get_bg_color)
+echo -e -n "${BG_COLOR}${WHITE}Enter backup filename (without extension) and email subject${BLINK}:${NC} "
 read -r backup_name
 if [ -z "$backup_name" ]; then
     echo "Error: Backup name cannot be empty!"
@@ -155,7 +175,8 @@ fi
 rm -f "$INITIAL_BACKUP_FILE" /tmp/initial_backup_log
 
 # Get cron interval
-echo -e -n "${BROWN}${WHITE}How often to run backup (in minutes)${BLINK}:${NC} "
+BG_COLOR=$(get_bg_color)
+echo -e -n "${BG_COLOR}${WHITE}How often to run backup (in minutes)${BLINK}:${NC} "
 read -r minutes
 if ! [[ "$minutes" =~ ^[0-9]+$ ]] || [ "$minutes" -lt 1 ]; then
     echo "Error: Please enter a valid number of minutes!"
