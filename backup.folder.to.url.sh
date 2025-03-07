@@ -38,7 +38,7 @@ echo "$backup_file"
 echo "Starting a web server for file download..."
 echo "لینک تا زمانی فعال است که کنترل سی نزنیم"
 echo "اگه زدیم یکبار python3 -m http.server 8556 مجدد میزنیم"
-echo "===--DOWNLOAD--===[dont use control+c]:"
+echo -e "\033[1;32m↓\033[0m \033[1;32m↓\033[0m \033[1;32m↓\033[0m DOWNLOAD \033[1;32m↓\033[0m \033[1;32m↓\033[0m \033[1;32m↓\033[0m [dont use control+c]:"
 ip_address=$(hostname -I | awk '{print $1}')
 echo -e "${GREEN}http://$ip_address:8556/$(basename $backup_file)${NC}"
 
