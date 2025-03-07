@@ -4,6 +4,9 @@
 GREEN='\033[42m\033[30m'  # Green background with black text
 NC='\033[0m'               # No color
 
+# Clear the screen before starting
+clear
+
 # Ask the user to choose an option
 echo -e "${GREEN}Please choose an option:${NC}"
 echo -e "1- ====> Enter the 📂 \033[36mFolder\033[0m 📂 \033[36m\033[0m paths manually"
@@ -26,8 +29,11 @@ else
     exit 1
 fi
 
+# Ask the user for the backup file name
+read -p "$(echo -e "${GREEN}Please enter a name for the backup file (without extension):${NC} ") " backup_file_name
+backup_file="/root/$backup_file_name-$(date +%Y%m%d%H%M%S).zip"
+
 # Create a zip file of the selected folders
-backup_file="/root/$backup_name-$(date +%Y%m%d%H%M%S).zip"
 zip -r "$backup_file" $backup_path
 
 # Notify the user about the backup file location
