@@ -6,9 +6,9 @@ NC='\033[0m'               # No color
 
 # Ask the user to choose an option
 echo -e "${GREEN}Please choose an option:${NC}"
-echo "1- ====> Enter the folder paths manually"
-echo "2- ====> Backup MARZNESHIN folders"
-echo "3- ====> Backup X-UI folder"
+echo -e "1- ====> Enter the 📂 \033[36mFolder\033[0m 📂 \033[36m\033[0m paths manually"
+echo -e "2- ====> Backup 📂 \033[36mMARZNESHIN\033[0m 📂 \033[36m\033[0m folders"
+echo -e "3- ====> Backup 📂 \033[36mX-UI\033[0m 📂 \033[36m\033[0m folders"
 read -p "$(echo -e "${GREEN}Your choice (1, 2, or 3):${NC} ") " choice
 
 # Determine the backup path based on user choice
