@@ -29,8 +29,9 @@
 </div>
 
 <div>
-<strong>000000000000:</strong>
-<pre><code>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</code></pre>
+<strong>backup.folder.to.url:</strong>
+<pre><code>sudo bash -c "$(curl -sL https://github.com/asd1asd00000/marzneshin/raw/refs/heads/main/backup.folder.to.url.sh)"
+</code></pre>
 </div>
 <div>
 <strong>000000000000:</strong>
