@@ -6,9 +6,9 @@ NC='\033[0m'               # No color
 
 # Ask the user to choose an option
 echo -e "${GREEN}Please choose an option:${NC}"
-echo "1- Option 1: Enter the folder paths manually"
-echo "2- Option 2: Backup Marzneshin folders"
-echo "3- Option 3: Backup x-ui folder"
+echo "1- ====> Enter the folder paths manually"
+echo "2- ====> Backup MARZNESHIN folders"
+echo "3- ====> Backup X-UI folder"
 read -p "$(echo -e "${GREEN}Your choice (1, 2, or 3):${NC} ") " choice
 
 # Determine the backup path based on user choice
