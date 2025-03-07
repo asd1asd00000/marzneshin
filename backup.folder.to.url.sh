@@ -31,7 +31,9 @@ echo "$backup_file"
 
 # Start a simple web server to serve the file
 echo "Starting a web server for file download..."
-echo "The file can be downloaded using the following URL:"
+echo "لینک تا زمانی فعال است که کنترل سی نزنیم
+echo "اگه زدیم یکبار python3 -m http.server 8556 مجدد میزنیم"
+echo "===--DOWNLOAD--===[dont use control+c]:"
 ip_address=$(hostname -I | awk '{print $1}')
 echo -e "${GREEN}http://$ip_address:8556/$(basename $backup_file)${NC}"
 
