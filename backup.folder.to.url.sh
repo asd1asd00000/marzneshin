@@ -8,14 +8,19 @@ NC='\033[0m'               # No color
 echo -e "${GREEN}Please choose an option:${NC}"
 echo "1- Option 1: Enter the folder paths manually"
 echo "2- Option 2: Backup Marzneshin folders"
-read -p "$(echo -e "${GREEN}Your choice (1 or 2):${NC} ") " choice
+echo "3- Option 3: Backup x-ui folder"
+read -p "$(echo -e "${GREEN}Your choice (1, 2, or 3):${NC} ") " choice
 
 # Determine the backup path based on user choice
 if [ "$choice" -eq 1 ]; then
     read -p "$(echo -e "${GREEN}Please enter the folder paths:${NC} ") " backup_path
+    backup_name="manual_backup"
 elif [ "$choice" -eq 2 ]; then
     backup_path="/etc/opt/marzneshin/ /var/lib/marzneshin/ /var/lib/marznode/"
     backup_name="marzneshin"
+elif [ "$choice" -eq 3 ]; then
+    backup_path="/etc/x-ui/"
+    backup_name="x-ui"
 else
     echo "Invalid choice. Exiting."
     exit 1
