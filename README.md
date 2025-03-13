@@ -34,6 +34,6 @@
 </code></pre>
 </div>
 <div>
-<strong>000000000000:</strong>
-<pre><code>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</code></pre>
+<strong>نصب نسخه پایین تر مرزنشین مثلا : v0.7.2:</strong>
+<pre><code>sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/v0.7.2/script.sh)" @ install</code></pre>
 </div>
