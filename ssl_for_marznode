@@ -1,10 +1,15 @@
 #!/bin/bash
 
+# Clear the screen for better visibility
+clear
+
 # Ask user for email address
-read -p "Enter your email address: " email
+echo -e "\e[42mEnter your email address:\e[0m"
+read email
 
 # Ask user for domain name
-read -p "Enter your domain name: " domain
+echo -e "\e[42mEnter your domain name:\e[0m"
+read domain
 
 # Update package lists
 apt-get update
@@ -31,6 +36,6 @@ mkdir -p /var/lib/marznode/certs
 ~/.acme.sh/acme.sh --installcert -d $domain --key-file /var/lib/marznode/certs/private.key --fullchain-file /var/lib/marznode/certs/cert.crt
 
 # Display final instructions to the user
-echo "Please add the following lines to your configuration:"
-echo "/var/lib/marznode/certs/cert.crt"
-echo "/var/lib/marznode/certs/private.key"
+echo -e "\e[42mPlease add the following lines to your configuration:\e[0m"
+echo -e "\e[42m/var/lib/marznode/certs/cert.crt\e[0m"
+echo -e "\e[42m/var/lib/marznode/certs/private.key\e[0m"
