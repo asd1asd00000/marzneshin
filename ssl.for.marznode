@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Ask user for email address
+read -p "Enter your email address: " email
+
+# Ask user for domain name
+read -p "Enter your domain name: " domain
+
+# Update package lists
+apt-get update
+
+# Install necessary packages
+apt install curl socat -y
+
+# Install acme.sh
+curl https://get.acme.sh | sh
+
+# Set default CA to Let's Encrypt
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+
+# Register account
+~/.acme.sh/acme.sh --register-account -m $email
+
+# Issue certificate for the domain
+~/.acme.sh/acme.sh --issue -d $domain --standalone
+
+# Create directory for certificates
+mkdir -p /var/lib/marznode/certs
+
+# Install the certificate
+~/.acme.sh/acme.sh --installcert -d $domain --key-file /var/lib/marznode/certs/private.key --fullchain-file /var/lib/marznode/certs/cert.crt
+
+# Display final instructions to the user
+echo "Please add the following lines to your configuration:"
+echo "/var/lib/marznode/certs/cert.crt"
+echo "/var/lib/marznode/certs/private.key"
