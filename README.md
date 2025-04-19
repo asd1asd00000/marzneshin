@@ -1,6 +1,6 @@
 <div>
 <strong>all command</strong>
-<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/maincommand1.sh)" @ install</code></pre>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/maincommand.sh)" @ install</code></pre>
 </div>
 
 
