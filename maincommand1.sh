@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Array of scripts
+# Array of scripts with their display names
 scripts=(
     "sudo bash -c \"\$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/nasbe-marznode.sh)\""
     "sudo bash -c \"\$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/ssl_for_marznode.sh)\""
@@ -12,21 +12,33 @@ scripts=(
     "sudo bash -c \"\$(curl -sL https://github.com/asd1asd00000/marzneshin/raw/refs/heads/main/backup.folder.to.url.sh)\""
 )
 
+# Array of display names for scripts
+names=(
+    "nasbe marznode"
+    "ssl_for_marznode"
+    "install Marzneshin"
+    "marzneshin cli admin"
+    "nasbe-ssl-marzneshin"
+    "backup.to.gmail"
+    "speedtest"
+    "backup.folder.to.url"
+)
+
 # Display list of scripts
 echo "List of scripts:"
 echo
 echo "marznode:"
-echo "1- ${scripts[0]}"
-echo "2- ${scripts[1]}"
+echo "1- ${names[0]}"
+echo "2- ${names[1]}"
 echo
 echo "marzneshin:"
-echo "3- ${scripts[2]}"
-echo "4- ${scripts[3]}"
-echo "5- ${scripts[4]}"
+echo "3- ${names[2]}"
+echo "4- ${names[3]}"
+echo "5- ${names[4]}"
 echo
-echo "6- ${scripts[5]}"
-echo "7- ${scripts[6]}"
-echo "8- ${scripts[7]}"
+echo "6- ${names[5]}"
+echo "7- ${names[6]}"
+echo "8- ${names[7]}"
 echo
 
 # Get user input
@@ -42,7 +54,7 @@ fi
 index=$((choice - 1))
 
 # Execute the selected script
-echo "Executing script: ${scripts[$index]}"
+echo "Executing script: ${names[$index]}"
 if bash -c "${scripts[$index]}"; then
     echo "Script executed successfully."
 else
