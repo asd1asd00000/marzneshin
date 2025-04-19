@@ -1,4 +1,11 @@
 <div>
+<strong>all command</strong>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/maincommand1.sh)" @ install</code></pre>
+</div>
+
+
+
+<div>
 <strong>نصب پنل مرزنشین:</strong>
 <pre><code>sudo bash -c "$(curl -sL https://github.com/marzneshin/Marzneshin/raw/master/script.sh)" @ install</code></pre>
 </div>
