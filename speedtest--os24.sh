@@ -7,38 +7,57 @@ BLACK_TEXT='\033[30m'
 BLINK='\033[5m'
 RESET='\033[0m'
 
-# Check if curl is installed, if not install it
+# Check if curl is installed
 if ! command -v curl > /dev/null 2>&1; then
     echo "curl is not installed. Installing..."
     sudo apt-get update -y && sudo apt-get install curl -y
-else
-    echo "curl is already installed."
+fi
+
+# Check if wget is installed
+if ! command -v wget > /dev/null 2>&1; then
+    echo "wget is not installed. Installing..."
+    sudo apt-get install wget -y
 fi
 
 # Check if libatomic1 is installed
 if ! dpkg -s libatomic1 > /dev/null 2>&1; then
     echo "libatomic1 is not installed. Installing..."
     sudo apt-get install -y libatomic1
-else
-    echo "libatomic1 is already installed."
 fi
 
-# Check if speedtest is installed, if not install from Ookla .deb
+# Check if speedtest is installed
 if ! command -v speedtest > /dev/null 2>&1; then
-    echo "speedtest is not installed. Installing from Ookla..."
+    echo "speedtest is not installed. Downloading official .deb package..."
 
-    TEMP_DEB="$(mktemp)" &&
-    curl -sLo "$TEMP_DEB" https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux.deb &&
-    sudo apt install -y "$TEMP_DEB" &&
-    rm -f "$TEMP_DEB"
-
-    if ! command -v speedtest > /dev/null 2>&1; then
-        echo "Installation failed. Please try manually from https://www.speedtest.net/apps/cli"
+    ARCH=$(uname -m)
+    if [ "$ARCH" == "x86_64" ]; then
+        ARCH_LABEL="x86_64"
+    elif [[ "$ARCH" == "aarch64" || "$ARCH" == "arm64" ]]; then
+        ARCH_LABEL="aarch64"
+    else
+        echo "Unsupported architecture: $ARCH"
         exit 1
     fi
-else
-    echo "speedtest is already installed."
+
+    wget -O /tmp/speedtest.deb "https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-${ARCH_LABEL}.deb"
+
+    if [ ! -f /tmp/speedtest.deb ]; then
+        echo "Failed to download speedtest.deb"
+        exit 1
+    fi
+
+    echo "Installing speedtest..."
+    sudo dpkg -i /tmp/speedtest.deb || sudo apt-get install -f -y
+
+    rm -f /tmp/speedtest.deb
+
+    if ! command -v speedtest > /dev/null 2>&1; then
+        echo "Installation failed. Try manually from: https://www.speedtest.net/apps/cli"
+        exit 1
+    fi
 fi
+
+echo "Speedtest is ready to use!"
 
 # Infinite menu loop
 while true; do
@@ -68,9 +87,4 @@ while true; do
         7)  echo "Running speed test with ATRINNET-SERVCO..."; speedtest --server-id=22097 ;;
         8)  echo "Running speed test with SYSTEC..."; speedtest --server-id=57696 ;;
         9)  echo "Running speed test with Sindad..."; speedtest --server-id=37820 ;;
-        10) echo "Running speed test with PentaHost..."; speedtest --server-id=68756 ;;
-        11) echo "Exiting..."; exit 0 ;;
-        *)  echo "Invalid option. Please enter a number between 1 and 11." ;;
-    esac
-    echo ""
-done
+        10) echo "Running speed test with PentaHost
