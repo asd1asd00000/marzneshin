@@ -40,6 +40,11 @@
 </div>
 
 <div>
+<strong>speedtest-ubuntu24:</strong>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/speedtest-ubuntu24.sh)"</code></pre>
+</div>
+
+<div>
 <strong>backup.folder.to.url:</strong>
 <pre><code>sudo bash -c "$(curl -sL https://github.com/asd1asd00000/marzneshin/raw/refs/heads/main/backup.folder.to.url.sh)"
 </code></pre>
