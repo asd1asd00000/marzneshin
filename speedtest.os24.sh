@@ -7,59 +7,39 @@ BLACK_TEXT='\033[30m'
 BLINK='\033[5m'
 RESET='\033[0m'
 
-# Check if curl is installed
-if ! command -v curl > /dev/null 2>&1; then
-    echo "curl is not installed. Installing..."
-    sudo apt-get update -y && sudo apt-get install curl -y
-fi
+# Ensure necessary tools are installed
+for pkg in curl wget gnupg1; do
+    if ! command -v $pkg > /dev/null 2>&1; then
+        echo "$pkg is not installed. Installing..."
+        sudo apt-get update && sudo apt-get install -y $pkg
+    fi
+done
 
-# Check if wget is installed
-if ! command -v wget > /dev/null 2>&1; then
-    echo "wget is not installed. Installing..."
-    sudo apt-get install wget -y
-fi
-
-# Check if libatomic1 is installed
+# Ensure libatomic1 is installed
 if ! dpkg -s libatomic1 > /dev/null 2>&1; then
-    echo "libatomic1 is not installed. Installing..."
+    echo "Installing required library libatomic1..."
     sudo apt-get install -y libatomic1
 fi
 
-# Check if speedtest is installed
+# Add Ookla's official repository (works with Ubuntu 24)
 if ! command -v speedtest > /dev/null 2>&1; then
-    echo "speedtest is not installed. Downloading official .deb package..."
+    echo "Adding Ookla's Speedtest repository..."
 
-    ARCH=$(uname -m)
-    if [ "$ARCH" == "x86_64" ]; then
-        ARCH_LABEL="x86_64"
-    elif [[ "$ARCH" == "aarch64" || "$ARCH" == "arm64" ]]; then
-        ARCH_LABEL="aarch64"
-    else
-        echo "Unsupported architecture: $ARCH"
-        exit 1
-    fi
-
-    wget -O /tmp/speedtest.deb "https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-${ARCH_LABEL}.deb"
-
-    if [ ! -f /tmp/speedtest.deb ]; then
-        echo "Failed to download speedtest.deb"
-        exit 1
-    fi
+    curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
 
     echo "Installing speedtest..."
-    sudo dpkg -i /tmp/speedtest.deb || sudo apt-get install -f -y
-
-    rm -f /tmp/speedtest.deb
-
-    if ! command -v speedtest > /dev/null 2>&1; then
-        echo "Installation failed. Try manually from: https://www.speedtest.net/apps/cli"
-        exit 1
-    fi
+    sudo apt-get install -y speedtest
 fi
 
-echo "Speedtest is ready to use!"
+if ! command -v speedtest > /dev/null 2>&1; then
+    echo "❌ Installation failed. You may need to check network/firewall restrictions."
+    echo "Or install manually from https://www.speedtest.net/apps/cli"
+    exit 1
+else
+    echo "✅ speedtest installed successfully!"
+fi
 
-# Infinite menu loop
+# Start interactive menu
 while true; do
     echo "Please select a server for speed testing:"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ) Irancell (Server ID: 4317)${RESET}"
