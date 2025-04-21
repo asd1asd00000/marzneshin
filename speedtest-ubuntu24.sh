@@ -7,64 +7,36 @@ BLACK_TEXT='\033[30m'
 BLINK='\033[5m'
 RESET='\033[0m'
 
-# Ensure required tools
-for pkg in curl wget gnupg1; do
-    if ! command -v $pkg > /dev/null 2>&1; then
-        echo "$pkg is not installed. Installing..."
-        sudo apt-get update && sudo apt-get install -y $pkg
-    fi
-done
-
-# Ensure libatomic1 is installed
-if ! dpkg -s libatomic1 > /dev/null 2>&1; then
-    echo "Installing required library libatomic1..."
-    sudo apt-get install -y libatomic1
+# اطمینان از نصب curl
+if ! command -v curl > /dev/null 2>&1; then
+    echo "Installing curl..."
+    sudo apt-get update && sudo apt-get install -y curl
 fi
 
-# Detect OS version
-OS_VERSION=$(lsb_release -cs)
-INSTALL_SPEEDTEST_MANUALLY=false
+# اضافه کردن مخزن speedtest
+echo "Adding speedtest repository..."
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
 
-# Try to install via repository unless on noble
-if [[ "$OS_VERSION" == "noble" ]]; then
-    INSTALL_SPEEDTEST_MANUALLY=true
-else
-    echo "Adding Ookla's Speedtest repository..."
-    curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-
-    echo "Installing speedtest from repository..."
-    sudo apt-get install -y speedtest || INSTALL_SPEEDTEST_MANUALLY=true
+# اصلاح فایل مخزن در صورت وجود عبارت noble
+LIST_FILE="/etc/apt/sources.list.d/ookla_speedtest-cli.list"
+if grep -q "noble" "$LIST_FILE"; then
+    echo "Patching repository file to replace 'noble' with 'jammy'..."
+    sudo sed -i 's/noble/jammy/g' "$LIST_FILE"
 fi
 
-# Fallback to manual install if necessary
-if $INSTALL_SPEEDTEST_MANUALLY; then
-    echo "⚠️  Falling back to manual installation..."
-    TEMP_DEB="/tmp/speedtest-cli.deb"
-    URL="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux64.deb"
+# بروزرسانی و نصب speedtest
+sudo apt-get update
+sudo apt-get install -y speedtest
 
-    echo "Downloading speedtest CLI..."
-    curl -Lo "$TEMP_DEB" "$URL"
-
-    if [[ -s "$TEMP_DEB" ]]; then
-        echo "Installing downloaded package..."
-        sudo dpkg -i "$TEMP_DEB" || sudo apt-get install -f -y
-        rm -f "$TEMP_DEB"
-    else
-        echo "❌ Failed to download the speedtest package."
-        echo "Please visit https://www.speedtest.net/apps/cli to download manually."
-        exit 1
-    fi
-fi
-
-# Final check
+# بررسی نصب
 if ! command -v speedtest > /dev/null 2>&1; then
-    echo "❌ speedtest installation failed."
+    echo "❌ Speedtest installation failed."
     exit 1
 else
-    echo "✅ speedtest is installed and ready to use!"
+    echo "✅ Speedtest installed successfully."
 fi
 
-# Show menu
+# منوی انتخاب سرور
 while true; do
     echo "Please select a server for speed testing:"
     echo -e "${YELLOW_BG}${BLACK_TEXT} 1 ) Irancell (Server ID: 4317)${RESET}"
