@@ -87,4 +87,9 @@ while true; do
         7)  echo "Running speed test with ATRINNET-SERVCO..."; speedtest --server-id=22097 ;;
         8)  echo "Running speed test with SYSTEC..."; speedtest --server-id=57696 ;;
         9)  echo "Running speed test with Sindad..."; speedtest --server-id=37820 ;;
-        10) echo "Running speed test with PentaHost
+        10) echo "Running speed test with PentaHost..."; speedtest --server-id=68756 ;;
+        11) echo "Exiting..."; exit 0 ;;
+        *)  echo "Invalid option. Please enter a number between 1 and 11." ;;
+    esac
+    echo ""
+done
