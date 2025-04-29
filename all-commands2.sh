@@ -52,35 +52,33 @@ submenu() {
 
     case $subchoice in
         1)
+            echo "Command: cat /proc/cpuinfo"
             cat /proc/cpuinfo
             ;;
         2)
+            echo "Command: speedtest --servers"
             speedtest --servers
             ;;
         3)
+            echo "Command: speedtest --server-id=13628"
             speedtest --server-id=13628
             ;;
         4)
+            echo "Command: apt update && apt upgrade -y"
             apt update && apt upgrade -y
             ;;
         5)
-            echo "Backing up Marzneshin folders..."
-            backup_dir="/etc/opt/marzneshin /var/lib/marzneshin /var/lib/marznode"
-            for dir in $backup_dir; do
-                if [ -d "$dir" ]; then
-                    echo "Backing up $dir..."
-                    tar -czf "/tmp/$(basename $dir).tar.gz" "$dir"
-                fi
-            done
-            if [ -f "/etc/opt/marzneshin/.env" ]; then
-                cp /etc/opt/marzneshin/.env /tmp/marzneshin_env_backup
-            fi
-            echo "Backup completed in /tmp/"
+            echo "===---  backup this folder ---===="
+            echo "/etc/opt/marzneshin/    .env"
+            echo "/var/lib/marzneshin/    sqlite3"
+            echo "/var/lib/marznode/"
             ;;
         6)
+            echo "Command: crontab -e"
             crontab -e
             ;;
         7)
+            echo "Command: bash <(curl -Ls https://raw.githubusercontent.com/Soroushnk/Astro/main/Astro.sh)"
             bash <(curl -Ls https://raw.githubusercontent.com/Soroushnk/Astro/main/Astro.sh)
             ;;
         8)
@@ -90,7 +88,9 @@ submenu() {
             echo "Invalid choice!"
             ;;
     esac
-    read -p "Press Enter to continue..."
+    if [ "$subchoice" != "8" ]; then
+        read -p "Press Enter to continue..."
+    fi
     submenu
 }
 
