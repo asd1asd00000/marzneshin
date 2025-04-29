@@ -36,12 +36,12 @@
 </div>
 <div>
 <strong>speedtest:</strong>
-<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/speedtest.sh)"</code></pre>
+<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/speed-test.sh)"</code></pre>
 </div>
 
 <div>
-<strong>speedtest-ubuntu24:</strong>
-<pre><code>sudo bash -c "$(curl -sL https://raw.githubusercontent.com/asd1asd00000/marzneshin/refs/heads/main/speedtest-ubuntu24.sh)"</code></pre>
+<strong>xxxxxxxxxxxxxxxxxxxxxx:</strong>
+<pre><code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</code></pre>
 </div>
 
 <div>
