@@ -47,7 +47,9 @@ submenu() {
     echo "6- Edit Cronjob"
     echo "7- Install Astro"
     echo "8- Back to Main Menu"
-    echo "9- nano /var/lib/marznode/xray_config.json"
+    echo "9(emty)- nano /var/lib/marznode/xray_config.json"
+    echo "10(emty)- cd marznode"
+    echo "10(emty)- docker compose -f ./compose.yml up -d"
     echo
     read -p "Enter your choice (1-8): " subchoice
 
