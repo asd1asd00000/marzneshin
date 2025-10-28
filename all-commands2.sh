@@ -47,7 +47,7 @@ submenu() {
     echo "6- Edit Cronjob"
     echo "7- Install Astro"
     echo "8- Back to Main Menu"
-    echo "9- nano /var/lib/marznode/xray_config.json
+    echo "9- nano /var/lib/marznode/xray_config.json"
     echo
     read -p "Enter your choice (1-8): " subchoice
 
