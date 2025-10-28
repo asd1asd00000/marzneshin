@@ -47,7 +47,7 @@ submenu() {
     echo "6- Edit Cronjob"
     echo "7- Install Astro"
     echo "8- Back to Main Menu"
-    echo "<><><><><><>marznod config<><><><><><><><>"
+    echo "<><><><><><> marznod config <><><><><><><><>"
     echo "nano /var/lib/marznode/xray_config.json"
     echo "cd marznode"
     echo "docker compose -f ./compose.yml up -d"
