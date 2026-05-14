@@ -1,0 +1,187 @@
+curl -fsSL -o dnstm-setup.sh https://raw.githubusercontent.com/SamNet-dev/dnstm-setup/master/dnstm-setup.sh
+sudo bash dnstm-setup.sh
+
+
+
+
+
+
+
+
+  slip1: dnst://eyJ2IjoxLCJ0YWciOiJzbGlwMSIsInRyYW5zcG9ydCI6eyJ0eXBlIjoic2xpcHN0cmVhbSIsImRvbWFpbiI6InQucGV6ZXNoay1raGFuZWguaXIiLCJjZXJ0IjoiLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tXG5NSUlCdkRDQ0FXT2dBd0lCQWdJUWRjSzFwaFFnZVI2OWV5bDVtZ1BnZlRBS0JnZ3Foa2pPUFFRREFqQTFNUlV3XG5Fd1lEVlFRS0V3eEVUbE5VVFNCU2IzVjBaWEl4SERBYUJnTlZCQU1URTNRdWNHVjZaWE5vYXkxcmFHRnVaV2d1XG5hWEl3SGhjTk1qWXdOVEUwTURjeU56TXpXaGNOTXpZd05URTBNRGN5TnpNeldqQTFNUlV3RXdZRFZRUUtFd3hFXG5UbE5VVFNCU2IzVjBaWEl4SERBYUJnTlZCQU1URTNRdWNHVjZaWE5vYXkxcmFHRnVaV2d1YVhJd1dUQVRCZ2NxXG5oa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVFwbG9EbmRpVi9mM1RBS0w3NmlQbmVyNVRlMjhPMGhmMk4vLzVCXG5oVjR0OVZobUJXT2Z6a1o0NlBDREprNlJNWkljU1dKajY3L0xncUxsTjRybng1OVZvMVV3VXpBT0JnTlZIUThCXG5BZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUhBd0V3REFZRFZSMFRBUUgvQkFJd0FEQWVCZ05WXG5IUkVFRnpBVmdoTjBMbkJsZW1WemFHc3RhMmhoYm1Wb0xtbHlNQW9HQ0NxR1NNNDlCQU1DQTBjQU1FUUNJSHdoXG5zRWpFeEd4dWJHV2psNUxaM1F1RFBvN1oxdUJOdjRiUVh3ZkRPRjd3QWlBcDU1c0l0YktsR0VTL2RUa1F0di9LXG5VcnRHRkxWWm1OU0ZtZ2xHdVFWdHVRPT1cbi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS1cbiJ9LCJiYWNrZW5kIjp7InR5cGUiOiJzb2NrcyIsInVzZXIiOiJhc2QiLCJwYXNzd29yZCI6ImFzZCJ9fQ
+  dnstt1: dnst://eyJ2IjoxLCJ0YWciOiJkbnN0dDEiLCJ0cmFuc3BvcnQiOnsidHlwZSI6ImRuc3R0IiwiZG9tYWluIjoiZC5wZXplc2hrLWtoYW5laC5pciIsInB1YmtleSI6IjFjZTlkMGU4YjhjNzhhMDAxMmRjZWMwMjM3OGJlYzcwYzhiNmM3MmJjNThmODlhMjU2MWY2MjYxYzZlMTJiMzEifSwiYmFja2VuZCI6eyJ0eXBlIjoic29ja3MiLCJ1c2VyIjoiYXNkIiwicGFzc3dvcmQiOiJhc2QifX0
+  noiz1: dnst://eyJ2IjoxLCJ0YWciOiJub2l6MSIsInRyYW5zcG9ydCI6eyJ0eXBlIjoiZG5zdHQiLCJkb21haW4iOiJuLnBlemVzaGsta2hhbmVoLmlyIiwicHVia2V5IjoiYjllMTBmNGI0YTU1NmE2ODVlNDVjZjcyZGI1ZTdjZWJkNDFmN2ExM2ZlM2MzOGUyNDYwYjAwYWRlNTgwYWUxMCJ9LCJiYWNrZW5kIjp7InR5cGUiOiJzb2NrcyIsInVzZXIiOiJhc2QiLCJwYXNzd29yZCI6ImFzZCJ9fQ
+  vay1: dnst://eyJ2IjoxLCJ0YWciOiJ2YXkxIiwidHJhbnNwb3J0Ijp7InR5cGUiOiJ2YXlkbnMiLCJkb21haW4iOiJ2LnBlemVzaGsta2hhbmVoLmlyIiwicHVia2V5IjoiYmUzZDk3OGEwNDAzYmVkMzcwZDNlMDAyZjliODA5NDEwYjU2OGUyZjMxOGJlOTY1NjM2ZTkzNGI0NTEwNTE2OCIsImRuc3R0X2NvbXBhdCI6dHJ1ZSwiaWRsZV90aW1lb3V0IjoiMm0iLCJrZWVwYWxpdmUiOiIxMHMifSwiYmFja2VuZCI6eyJ0eXBlIjoic29ja3MiLCJ1c2VyIjoiYXNkIiwicGFzc3dvcmQiOiJhc2QifX0
+  slip-ssh: dnst://eyJ2IjoxLCJ0YWciOiJzbGlwLXNzaCIsInRyYW5zcG9ydCI6eyJ0eXBlIjoic2xpcHN0cmVhbSIsImRvbWFpbiI6InMucGV6ZXNoay1raGFuZWguaXIiLCJjZXJ0IjoiLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tXG5NSUlCdnpDQ0FXU2dBd0lCQWdJUkFPVm90RTZvK0lPSmw5NHM1OUVMekRVd0NnWUlLb1pJemowRUF3SXdOVEVWXG5NQk1HQTFVRUNoTU1SRTVUVkUwZ1VtOTFkR1Z5TVJ3d0dnWURWUVFERXhOekxuQmxlbVZ6YUdzdGEyaGhibVZvXG5MbWx5TUI0WERUSTJNRFV4TkRBM01qY3pORm9YRFRNMk1EVXhOREEzTWpjek5Gb3dOVEVWTUJNR0ExVUVDaE1NXG5SRTVUVkUwZ1VtOTFkR1Z5TVJ3d0dnWURWUVFERXhOekxuQmxlbVZ6YUdzdGEyaGhibVZvTG1seU1Ga3dFd1lIXG5Lb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUjEzL29idU90NUZzOXRkZFpHUnhZSjd5UmhWSW9qSnltVHJjXG55d0Rpc25QeDNiSGZ4OHYxellNYk9rVVEvWVZKRjJqMkNUeEVGa1BqQmk0VUdIeEhvNk5WTUZNd0RnWURWUjBQXG5BUUgvQkFRREFnV2dNQk1HQTFVZEpRUU1NQW9HQ0NzR0FRVUZCd01CTUF3R0ExVWRFd0VCL3dRQ01BQXdIZ1lEXG5WUjBSQkJjd0ZZSVRjeTV3WlhwbGMyaHJMV3RvWVc1bGFDNXBjakFLQmdncWhrak9QUVFEQWdOSkFEQkdBaUVBXG4wd0VWNEhQMUdsYlFvTzRnV0lUb0hOZ3duKzNBbFlZUHE0bkVpdlEreThrQ0lRRHpkcEFERm1YZ210cVAwWE4rXG5VVWNUbjRxeE90aTJMZFFwMUp1bEN5RHNqUT09XG4tLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tXG4ifSwiYmFja2VuZCI6eyJ0eXBlIjoic3NoIiwidXNlciI6ImFzZDEiLCJwYXNzd29yZCI6ImFzZDEifX0
+  dnstt-ssh: dnst://eyJ2IjoxLCJ0YWciOiJkbnN0dC1zc2giLCJ0cmFuc3BvcnQiOnsidHlwZSI6ImRuc3R0IiwiZG9tYWluIjoiZHMucGV6ZXNoay1raGFuZWguaXIiLCJwdWJrZXkiOiI2ODg3MDg2ZGRhMmRhODAxNTE4OTVjODk1MGI0ZGY4MzE3ODE0OTI0YTZhOWJhYjY3YWJlMmFkNzU2NTllNzJmIn0sImJhY2tlbmQiOnsidHlwZSI6InNzaCIsInVzZXIiOiJhc2QxIiwicGFzc3dvcmQiOiJhc2QxIn19
+  noiz-ssh: dnst://eyJ2IjoxLCJ0YWciOiJub2l6LXNzaCIsInRyYW5zcG9ydCI6eyJ0eXBlIjoiZG5zdHQiLCJkb21haW4iOiJ6LnBlemVzaGsta2hhbmVoLmlyIiwicHVia2V5IjoiYTdmNzNjMWIyNTg5MWM3MzhhOGIzY2NmODgxYWE1MTdmNzU5ZTZjOWIxMzZlZWM0ZGExY2ZhMjcwYmEzZDU2NSJ9LCJiYWNrZW5kIjp7InR5cGUiOiJzc2giLCJ1c2VyIjoiYXNkMSIsInBhc3N3b3JkIjoiYXNkMSJ9fQ
+  vay-ssh: dnst://eyJ2IjoxLCJ0YWciOiJ2YXktc3NoIiwidHJhbnNwb3J0Ijp7InR5cGUiOiJ2YXlkbnMiLCJkb21haW4iOiJ2ei5wZXplc2hrLWtoYW5laC5pciIsInB1YmtleSI6ImY3M2NlNjRlODEzN2E3MGNjNjUwYjYwMDk1M2NmNGNjZTdjMDliZDg3OGRmZTIzMTY0MmQzY2NlNDc3NzgxMjEiLCJkbnN0dF9jb21wYXQiOnRydWUsImlkbGVfdGltZW91dCI6IjJtIiwia2VlcGFsaXZlIjoiMTBzIn0sImJhY2tlbmQiOnsidHlwZSI6InNzaCIsInVzZXIiOiJhc2QxIiwicGFzc3dvcmQiOiJhc2QxIn19
+
+  Share URLs — slipnet:// (for SlipNet app)
+  ────────────────────────────────────────
+  slip1:    slipnet://MTZ8c3N8dC5wZXplc2hrLWtoYW5laC5pcnx0LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+  dnstt1:    slipnet://MTZ8ZG5zdHR8ZC5wZXplc2hrLWtoYW5laC5pcnxkLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+  noiz1:     slipnet://MTZ8c2F5ZWRuc3xuLnBlemVzaGsta2hhbmVoLmlyfG4ucGV6ZXNoay1raGFuZWguaXJ8OC44LjguODo1MzowfDF8NTAwMHxiYnJ8MTA4MHwxMjcuMC4wLjF8MHxiOWUxMGY0YjRhNTU2YTY4NWU0NWNmNzJkYjVlN2NlYmQ0MWY3YTEzZmUzYzM4ZTI0NjBiMDBhZGU1ODBhZTEwfGFzZHxhc2R8MHx8fDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+  vay1:      slipnet://MTZ8ZG5zdHR8di5wZXplc2hrLWtoYW5laC5pcnx2LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8YmUzZDk3OGEwNDAzYmVkMzcwZDNlMDAyZjliODA5NDEwYjU2OGUyZjMxOGJlOTY1NjM2ZTkzNGI0NTEwNTE2OHxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+  slip-ssh:  slipnet://MTZ8c2xpcHN0cmVhbV9zc2h8cy5wZXplc2hrLWtoYW5laC5pcnxzLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDF8YXNkMXxhc2QxfDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+  dnstt-ssh: slipnet://MTZ8ZG5zdHRfc3NofGRzLnBlemVzaGsta2hhbmVoLmlyfGRzLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8Njg4NzA4NmRkYTJkYTgwMTUxODk1Yzg5NTBiNGRmODMxNzgxNDkyNGE2YTliYWI2N2FiZTJhZDc1NjU5ZTcyZnxhc2R8YXNkfDF8YXNkMXxhc2QxfDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+  noiz-ssh:  slipnet://MTZ8c2F5ZWRuc19zc2h8ei5wZXplc2hrLWtoYW5laC5pcnx6LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8YTdmNzNjMWIyNTg5MWM3MzhhOGIzY2NmODgxYWE1MTdmNzU5ZTZjOWIxMzZlZWM0ZGExY2ZhMjcwYmEzZDU2NXxhc2R8YXNkfDF8YXNkMXxhc2QxfDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+  vay-ssh:   slipnet://MTZ8ZG5zdHRfc3NofHZ6LnBlemVzaGsta2hhbmVoLmlyfHZ6LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8ZjczY2U2NGU4MTM3YTcwY2M2NTBiNjAwOTUzY2Y0Y2NlN2MwOWJkODc4ZGZlMjMxNjQyZDNjY2U0Nzc3ODEyMXxhc2R8YXNkfDF8YXNkMXxhc2QxfDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+
+  SOCKS Proxy Authentication
+  ────────────────────────────────────────
+  Username:  asd
+  Password:  asd
+
+  SSH Tunnel User
+  ────────────────────────────────────────
+  Username:  asd1
+  Password:  asd1
+  Port:      22
+
+  DNS Resolvers (use in SlipNet)
+  ────────────────────────────────────────
+  8.8.8.8:53        (Google)
+  1.1.1.1:53        (Cloudflare)
+  9.9.9.9:53        (Quad9)
+  208.67.222.222:53 (OpenDNS)
+  94.140.14.14:53   (AdGuard)
+  185.228.168.9:53  (CleanBrowsing)
+
+  Client App
+  ────────────────────────────────────────
+  SlipNet (Android): https://github.com/anonvector/SlipNet/releases
+
+  Useful Commands
+  ────────────────────────────────────────
+  dnstm tunnel list               Show all tunnels
+  dnstm tunnel share -t <tag>     Generate share URL
+  dnstm router status             Show router status
+  dnstm router logs               View router logs
+  dnstm tunnel logs --tag slip1   View tunnel logs
+
+  Management TUI
+  ────────────────────────────────────────
+  Run dnstm-setup --manage to open the full management menu.
+  From there you can:
+    - Add/remove tunnels and domains
+    - Add Xray backend (VLESS/VMess/Trojan)
+    - Manage SSH tunnel users
+    - Change DNSTT MTU
+    - View status, logs, and share URLs
+    - Update to latest version
+    - Harden or uninstall
+
+
+-----------------------------------------
+g       (systemd security for all services)
+  8)  Xray backend          (connect 3x-ui panel via DNS tunnel)
+  9)  Change DNSTT MTU      (change MTU on existing DNSTT tunnels)
+
+  ──────────────────────────────────────────────
+  10) Update script         (check for new versions)
+  11) Cleanup & recover     (emergency disk cleanup, log suppression)
+  12) Uninstall everything
+
+  0)  Exit
+
+  Select [0-12]: 1
+
+
+  ╔══════════════════════════════════════════════════════╗
+  ║                                                      ║
+  ║                  dnstm-setup v1.4.1                  ║
+  ║             Interactive DNS Tunnel Setup             ║
+  ║                                                      ║
+  ╚══════════════════════════════════════════════════════╝
+
+  Server IP: 46.226.163.228
+
+  Tunnel Status
+  ────────────────────────────────────────
+
+Mode: Multi-tunnel
+
+TAG              TRANSPORT    BACKEND          PORT     DOMAIN               STATUS
+------------------------------------------------------------------------------------------
+slip1            Slipstream   socks            5310     t.pezeshk-khaneh.ir  Running (default)
+dnstt1           DNSTT        socks            5311     d.pezeshk-khaneh.ir  Running
+slip-ssh         Slipstream   ssh              5312     s.pezeshk-khaneh.ir  Running
+dnstt-ssh        DNSTT        ssh              5313     ds.pezeshk-khaneh.ir Running
+noiz1            DNSTT        socks            5314     n.pezeshk-khaneh.ir  Running
+noiz-ssh         DNSTT        ssh              5315     z.pezeshk-khaneh.ir  Running
+vay1             VayDNS       socks            5316     v.pezeshk-khaneh.ir  Running
+vay-ssh          VayDNS       ssh              5317     vz.pezeshk-khaneh.ir Running
+slip22           Slipstream   socks            5318     t.ns.pezeshk-khaneh.ir Running
+
+  SOCKS Proxy Authentication
+  ────────────────────────────────────────
+  Username:  asd
+  Password:  asd
+
+  microsocks Port: 54580
+
+  SSH Tunnel Users
+  ────────────────────────────────────────
+  asd1
+  aaa
+
+  Share URLs — dnst:// (for dnstc CLI)
+  ────────────────────────────────────────
+  dnstt1:
+  dnst://eyJ2IjoxLCJ0YWciOiJkbnN0dDEiLCJ0cmFuc3BvcnQiOnsidHlwZSI6ImRuc3R0IiwiZG9tYWluIjoiZC5wZXplc2hrLWtoYW5laC5pciIsInB1YmtleSI6IjFjZTlkMGU4YjhjNzhhMDAxMmRjZWMwMjM3OGJlYzcwYzhiNmM3MmJjNThmODlhMjU2MWY2MjYxYzZlMTJiMzEifSwiYmFja2VuZCI6eyJ0eXBlIjoic29ja3MiLCJ1c2VyIjoiYXNkIiwicGFzc3dvcmQiOiJhc2QifX0
+
+  noiz1:
+  dnst://eyJ2IjoxLCJ0YWciOiJub2l6MSIsInRyYW5zcG9ydCI6eyJ0eXBlIjoiZG5zdHQiLCJkb21haW4iOiJuLnBlemVzaGsta2hhbmVoLmlyIiwicHVia2V5IjoiYjllMTBmNGI0YTU1NmE2ODVlNDVjZjcyZGI1ZTdjZWJkNDFmN2ExM2ZlM2MzOGUyNDYwYjAwYWRlNTgwYWUxMCJ9LCJiYWNrZW5kIjp7InR5cGUiOiJzb2NrcyIsInVzZXIiOiJhc2QiLCJwYXNzd29yZCI6ImFzZCJ9fQ
+
+  slip1:
+  dnst://eyJ2IjoxLCJ0YWciOiJzbGlwMSIsInRyYW5zcG9ydCI6eyJ0eXBlIjoic2xpcHN0cmVhbSIsImRvbWFpbiI6InQucGV6ZXNoay1raGFuZWguaXIiLCJjZXJ0IjoiLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tXG5NSUlCdkRDQ0FXT2dBd0lCQWdJUWRjSzFwaFFnZVI2OWV5bDVtZ1BnZlRBS0JnZ3Foa2pPUFFRREFqQTFNUlV3XG5Fd1lEVlFRS0V3eEVUbE5VVFNCU2IzVjBaWEl4SERBYUJnTlZCQU1URTNRdWNHVjZaWE5vYXkxcmFHRnVaV2d1XG5hWEl3SGhjTk1qWXdOVEUwTURjeU56TXpXaGNOTXpZd05URTBNRGN5TnpNeldqQTFNUlV3RXdZRFZRUUtFd3hFXG5UbE5VVFNCU2IzVjBaWEl4SERBYUJnTlZCQU1URTNRdWNHVjZaWE5vYXkxcmFHRnVaV2d1YVhJd1dUQVRCZ2NxXG5oa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVFwbG9EbmRpVi9mM1RBS0w3NmlQbmVyNVRlMjhPMGhmMk4vLzVCXG5oVjR0OVZobUJXT2Z6a1o0NlBDREprNlJNWkljU1dKajY3L0xncUxsTjRybng1OVZvMVV3VXpBT0JnTlZIUThCXG5BZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUhBd0V3REFZRFZSMFRBUUgvQkFJd0FEQWVCZ05WXG5IUkVFRnpBVmdoTjBMbkJsZW1WemFHc3RhMmhoYm1Wb0xtbHlNQW9HQ0NxR1NNNDlCQU1DQTBjQU1FUUNJSHdoXG5zRWpFeEd4dWJHV2psNUxaM1F1RFBvN1oxdUJOdjRiUVh3ZkRPRjd3QWlBcDU1c0l0YktsR0VTL2RUa1F0di9LXG5VcnRHRkxWWm1OU0ZtZ2xHdVFWdHVRPT1cbi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS1cbiJ9LCJiYWNrZW5kIjp7InR5cGUiOiJzb2NrcyIsInVzZXIiOiJhc2QiLCJwYXNzd29yZCI6ImFzZCJ9fQ
+
+  slip22:
+  dnst://eyJ2IjoxLCJ0YWciOiJzbGlwMjIiLCJ0cmFuc3BvcnQiOnsidHlwZSI6InNsaXBzdHJlYW0iLCJkb21haW4iOiJ0Lm5zLnBlemVzaGsta2hhbmVoLmlyIiwiY2VydCI6Ii0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLVxuTUlJQnh6Q0NBVzJnQXdJQkFnSVJBTjUydUpzVTNZdSs0NVErZjlBNlZoMHdDZ1lJS29aSXpqMEVBd0l3T0RFVlxuTUJNR0ExVUVDaE1NUkU1VFZFMGdVbTkxZEdWeU1SOHdIUVlEVlFRREV4WjBMbTV6TG5CbGVtVnphR3N0YTJoaFxuYm1Wb0xtbHlNQjRYRFRJMk1EVXhOREEzTXpreE5Wb1hEVE0yTURVeE5EQTNNemt4TlZvd09ERVZNQk1HQTFVRVxuQ2hNTVJFNVRWRTBnVW05MWRHVnlNUjh3SFFZRFZRUURFeFowTG01ekxuQmxlbVZ6YUdzdGEyaGhibVZvTG1seVxuTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUS9PY0x0NDMxb1g1ZE5sbW9DbkQyN21EaUd6WFxuM1UxZEJ0YTNWRXpXMURDemVkWVp6ZVVTblRiSmIwYk55cFBwdStCUW84cWVYdVlxTGdzS0NrZU5FNk5ZTUZZd1xuRGdZRFZSMFBBUUgvQkFRREFnV2dNQk1HQTFVZEpRUU1NQW9HQ0NzR0FRVUZCd01CTUF3R0ExVWRFd0VCL3dRQ1xuTUFBd0lRWURWUjBSQkJvd0dJSVdkQzV1Y3k1d1pYcGxjMmhyTFd0b1lXNWxhQzVwY2pBS0JnZ3Foa2pPUFFRRFxuQWdOSUFEQkZBaUVBcUh1U2kvenVwNUE2Z3B1dTJBTllzUUdFOCtjdk5RMXd3Q1Y5ajBQUjZUY0NJQ1dVOUlvdVxuWmpma0haTjRjYkJJY0xhSkpQdHdLTzcyRFF4MzdDaHRQekxnXG4tLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tXG4ifSwiYmFja2VuZCI6eyJ0eXBlIjoic29ja3MiLCJ1c2VyIjoiYXNkIiwicGFzc3dvcmQiOiJhc2QifX0
+
+  vay1:
+  dnst://eyJ2IjoxLCJ0YWciOiJ2YXkxIiwidHJhbnNwb3J0Ijp7InR5cGUiOiJ2YXlkbnMiLCJkb21haW4iOiJ2LnBlemVzaGsta2hhbmVoLmlyIiwicHVia2V5IjoiYmUzZDk3OGEwNDAzYmVkMzcwZDNlMDAyZjliODA5NDEwYjU2OGUyZjMxOGJlOTY1NjM2ZTkzNGI0NTEwNTE2OCIsImRuc3R0X2NvbXBhdCI6dHJ1ZSwiaWRsZV90aW1lb3V0IjoiMm0iLCJrZWVwYWxpdmUiOiIxMHMifSwiYmFja2VuZCI6eyJ0eXBlIjoic29ja3MiLCJ1c2VyIjoiYXNkIiwicGFzc3dvcmQiOiJhc2QifX0
+
+  SSH tunnel share URLs require credentials:
+    dnstm tunnel share -t dnstt-ssh --user <username> --password <pass>
+    dnstm tunnel share -t noiz-ssh --user <username> --password <pass>
+    dnstm tunnel share -t slip-ssh --user <username> --password <pass>
+    dnstm tunnel share -t vay-ssh --user <username> --password <pass>
+
+  Share URLs — slipnet:// (for SlipNet app)
+  ────────────────────────────────────────
+  dnstt1:
+  slipnet://MTZ8ZG5zdHR8ZC5wZXplc2hrLWtoYW5laC5pcnxkLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  dnstt-ssh:
+  slipnet://MTZ8ZG5zdHRfc3NofGRzLnBlemVzaGsta2hhbmVoLmlyfGRzLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8Njg4NzA4NmRkYTJkYTgwMTUxODk1Yzg5NTBiNGRmODMxNzgxNDkyNGE2YTliYWI2N2FiZTJhZDc1NjU5ZTcyZnxhc2R8YXNkfDF8YWFhfGFhYXwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  noiz1:
+  slipnet://MTZ8c2F5ZWRuc3xuLnBlemVzaGsta2hhbmVoLmlyfG4ucGV6ZXNoay1raGFuZWguaXJ8OC44LjguODo1MzowfDF8NTAwMHxiYnJ8MTA4MHwxMjcuMC4wLjF8MHxiOWUxMGY0YjRhNTU2YTY4NWU0NWNmNzJkYjVlN2NlYmQ0MWY3YTEzZmUzYzM4ZTI0NjBiMDBhZGU1ODBhZTEwfGFzZHxhc2R8MHx8fDIyfDB8MTI3LjAuMC4xfDB8fHVkcHxwYXNzd29yZHx8fDB8MHw0NDN8fHwwfHwwfDB8
+
+  noiz-ssh:
+  slipnet://MTZ8c2F5ZWRuc19zc2h8ei5wZXplc2hrLWtoYW5laC5pcnx6LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8YTdmNzNjMWIyNTg5MWM3MzhhOGIzY2NmODgxYWE1MTdmNzU5ZTZjOWIxMzZlZWM0ZGExY2ZhMjcwYmEzZDU2NXxhc2R8YXNkfDF8YWFhfGFhYXwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  slip1:
+  slipnet://MTZ8c3N8dC5wZXplc2hrLWtoYW5laC5pcnx0LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  slip22:
+  slipnet://MTZ8c3N8dC5ucy5wZXplc2hrLWtoYW5laC5pcnx0Lm5zLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  slip-ssh:
+  slipnet://MTZ8c2xpcHN0cmVhbV9zc2h8cy5wZXplc2hrLWtoYW5laC5pcnxzLnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8MWNlOWQwZThiOGM3OGEwMDEyZGNlYzAyMzc4YmVjNzBjOGI2YzcyYmM1OGY4OWEyNTYxZjYyNjFjNmUxMmIzMXxhc2R8YXNkfDF8YWFhfGFhYXwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  vay1:
+  slipnet://MTZ8ZG5zdHR8di5wZXplc2hrLWtoYW5laC5pcnx2LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8YmUzZDk3OGEwNDAzYmVkMzcwZDNlMDAyZjliODA5NDEwYjU2OGUyZjMxOGJlOTY1NjM2ZTkzNGI0NTEwNTE2OHxhc2R8YXNkfDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  vay-ssh:
+  slipnet://MTZ8ZG5zdHRfc3NofHZ6LnBlemVzaGsta2hhbmVoLmlyfHZ6LnBlemVzaGsta2hhbmVoLmlyfDguOC44Ljg6NTM6MHwxfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8ZjczY2U2NGU4MTM3YTcwY2M2NTBiNjAwOTUzY2Y0Y2NlN2MwOWJkODc4ZGZlMjMxNjQyZDNjY2U0Nzc3ODEyMXxhc2R8YXNkfDF8YWFhfGFhYXwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+  DNS Resolvers (use in SlipNet)
+  ────────────────────────────────────────
+  8.8.8.8:53        (Google)
+  1.1.1.1:53        (Cloudflare)
+  9.9.9.9:53        (Quad9)
+  208.67.222.222:53 (OpenDNS)
+
