@@ -1,0 +1,10 @@
+==============================================
+Netlify deployment complete.
+Profile: NETLIFY_EDGE_LOW_PING_OPEN
+URL:     https://xhttprelaynf-nd6tpxen.netlify.app
+Unique:  https://6a08ba119e698747726287e4--xhttprelaynf-nd6tpxen.netlify.app
+Deploy:  6a08ba119e698747726287e4
+
+Use this in your client Host field: xhttprelaynf-nd6tpxen.netlify.app
+Path: /ver
+==============================================
